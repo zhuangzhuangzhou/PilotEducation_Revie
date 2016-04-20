@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol XLBaseTableViewDelegate <NSObject>
+- (void) touchTable;
+@end
 
 @interface XLBaseTableView : UITableView
-
+@property (nonatomic, weak) id<XLBaseTableViewDelegate>xlDelegate;
 @end

@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  XLAppDelegate.h
 //  PilotEducation_Review
 //
 //  Created by mac on 16/3/10.
@@ -11,7 +11,9 @@
 @interface XLAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIResponder * currentResponder;
 
-
++(void) setLoginRoot;
++(void) setTabRoot;
 @end
 

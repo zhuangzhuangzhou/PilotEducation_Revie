@@ -1,5 +1,5 @@
 //
-//  AppDelegate.m
+//  XLAppDelegate.m
 //  PilotEducation_Review
 //
 //  Created by mac on 16/3/10.
@@ -7,7 +7,9 @@
 //
 
 #import "XLAppDelegate.h"
-
+#import "XLBaseNavigationController.h"
+#import "XLBaseTabBarController.h"
+#import <AFNetworking.h>
 @interface XLAppDelegate ()
 
 @end
@@ -41,5 +43,36 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
++(void) setLoginRoot
+{
+    
+}
 
++(void) setTabRoot
+{
+    XLBaseTabBarController * tabbar = [[XLBaseTabBarController alloc] init];
+    XLBaseNavigationController * homePageNav = [self createTabWithStoryboardName:@"XLHomePage" identifier:@"homePageNVC" title:@"首页" image:@"tabbar_0_normal"];
+    XLBaseNavigationController * applyNav = [self createTabWithStoryboardName:@"XLApply" identifier:@"applyNVC" title:@"报名" image:@"tabbar_5_normal"];
+    XLBaseNavigationController * personalCenterNav = [self createTabWithStoryboardName:@"XLPersonalCenter" identifier:@"personalCenterNVC" title:@"个人中心" image:@"tabbar_4_normal"];
+    
+    tabbar.viewControllers = [NSArray arrayWithObjects:homePageNav,applyNav,personalCenterNav, nil];
+    
+    XLAppDelegate * appDele = (XLAppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDele.window.rootViewController = tabbar;
+}
+
++ (XLBaseNavigationController *) createTabWithStoryboardName:(NSString *) storyName
+                                             identifier:(NSString *) identifier
+                                                  title:(NSString *) title
+                                                  image:(NSString *) imageName
+{
+    XLBaseNavigationController *  nav =  KSTORYBOAED_ACQUIRE_CONTROLLER(storyName, identifier);
+    if (title && imageName) {
+        UITabBarItem *firstItem = [[UITabBarItem alloc]initWithTitle:nil image:[UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]] selectedImage:nil];
+        firstItem.imageInsets = UIEdgeInsetsMake(7, 0, -7, 0);
+        nav.topViewController.tabBarItem = firstItem;
+    }
+    
+    return nav;
+}
 @end

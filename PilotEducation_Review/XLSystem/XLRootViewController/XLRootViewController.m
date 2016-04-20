@@ -7,7 +7,8 @@
 //
 
 #import "XLRootViewController.h"
-
+#import "APSStringUtil.h"
+#import "XLAppDelegate.h"
 @interface XLRootViewController ()
 
 @end
@@ -16,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [XLAppDelegate setTabRoot];
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //if ([APSStringUtil isEmpty:[defaults objectForKey:@"PHONE_NUMBER"]]) {
+        
+    //} else {
+    //    [XLAppDelegate setLoginRoot];
+    //}
 }
 
 - (void)didReceiveMemoryWarning {

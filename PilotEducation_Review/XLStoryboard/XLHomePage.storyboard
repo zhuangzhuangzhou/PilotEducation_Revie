@@ -1,7 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A2301" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Base Navigation Controller-->
+        <scene sceneID="W9b-Mg-yqt">
+            <objects>
+                <navigationController storyboardIdentifier="homePageNVC" id="5Qf-Qw-awB" customClass="XLBaseNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R1Y-bV-d07">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="shi-3i-RRw" kind="relationship" relationship="rootViewController" id="HSM-8B-ZJw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJd-Rb-L7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2.1333333333333333" y="403.27999999999997"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="epx-0n-cNN">
+            <objects>
+                <viewController storyboardIdentifier="homePageVC" id="shi-3i-RRw" customClass="XLHomePageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XAQ-Yj-80e"/>
+                        <viewControllerLayoutGuide type="bottom" id="zoV-RM-8tf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G5j-si-C4Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f2l-mV-xlL" customClass="XLBaseTableView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f2l-mV-xlL" firstAttribute="leading" secondItem="G5j-si-C4Q" secondAttribute="leading" id="5ZD-z3-5v4"/>
+                            <constraint firstItem="f2l-mV-xlL" firstAttribute="top" secondItem="XAQ-Yj-80e" secondAttribute="bottom" id="Ggm-nq-mL3"/>
+                            <constraint firstAttribute="trailing" secondItem="f2l-mV-xlL" secondAttribute="trailing" id="IQo-v3-pjE"/>
+                            <constraint firstItem="zoV-RM-8tf" firstAttribute="top" secondItem="f2l-mV-xlL" secondAttribute="bottom" id="rYF-wR-7pR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="首页" id="wk4-df-wl2"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="f2l-mV-xlL" id="qcD-FY-uaU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0e5-DY-SGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="403"/>
+        </scene>
+        <!--详情-->
+        <scene sceneID="83E-1C-P5L">
+            <objects>
+                <viewController id="lxB-AI-Ihi" customClass="XLDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eKX-3N-g5g"/>
+                        <viewControllerLayoutGuide type="bottom" id="XCc-Zc-BYC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bj1-5e-mBL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="详情" id="zep-gK-5sO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kAl-qS-N4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="403"/>
+        </scene>
+    </scenes>
 </document>

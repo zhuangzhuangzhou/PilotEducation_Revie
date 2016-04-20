@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XLHomePageViewModel : NSObject
-
+@interface XLHomePageViewModel : NSObject<UITableViewDataSource,
+UITableViewDelegate>
+@property (nonatomic,strong) NSMutableArray * dataSource;
 @end

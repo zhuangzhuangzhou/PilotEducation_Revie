@@ -1,5 +1,5 @@
 //
-//  BaseViewController.h
+//  XLBaseViewController.h
 //  PilotEducation_Review
 //
 //  Created by mac on 16/3/11.

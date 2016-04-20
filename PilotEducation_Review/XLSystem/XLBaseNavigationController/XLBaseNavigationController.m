@@ -9,5 +9,16 @@
 #import "XLBaseNavigationController.h"
 
 @implementation XLBaseNavigationController
-
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    viewController.hidesBottomBarWhenPushed = YES;
+    [super pushViewController:viewController animated:animated];
+}
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 @end

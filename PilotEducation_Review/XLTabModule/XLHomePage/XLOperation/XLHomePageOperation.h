@@ -9,5 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface XLHomePageOperation : NSObject
+/**
+ *  获取首页
+ *
+ *  @param completeBlock 操作完成回调block
+ */
+- (void) getHomePageCompleteBlock:(void(^)(id result, NSError *error))completeBlock;
 
 @end
