@@ -31,7 +31,8 @@
     }
     return array;
 }
-#pragma mark - 领航首页
+
+#pragma mark - 首页
 - (void) getHomePage {
     NSString *apiUrl=[NSString stringWithFormat:@"%@", @"http://app.chinaneg.com/Api/index/getIndexInfo"];
     NSDictionary *params=@{@"data":@""};
